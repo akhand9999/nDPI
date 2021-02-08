@@ -2,9 +2,6 @@ language: c
 
 matrix:
   include:
-    - os: osx
-      compiler: clang
-
     - os: linux
       env: BUILD_DPKG_PACKAGE=y
       compiler: gcc
@@ -49,7 +46,9 @@ matrix:
     - os: linux
       compiler: gcc
       dist: bionic
-      arch: arm64
+      arch: arm64-graviton2
+      virt: lxd
+      group: edge
       addons:
         apt:
           packages:
@@ -61,7 +60,9 @@ matrix:
     - os: linux
       compiler: clang
       dist: bionic
-      arch: arm64
+      arch: arm64-graviton2
+      virt: lxd
+      group: edge
       addons:
         apt:
           packages:
